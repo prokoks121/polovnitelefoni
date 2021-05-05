@@ -1,0 +1,482 @@
+@media only screen and (max-width: 1023px) {
+	.model_request{
+    margin-top: 95px;
+	}
+	.model_request:hover{
+		margin-top: 155px;
+	}
+    .container {
+        min-width: 531px;
+    }
+    .validation_errors {
+        width: 100%;
+        left: unset;
+        margin-left: unset;
+    }
+    .podesavanja {
+        width: 523px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .podesavanja .opstes {
+        display: table;
+        margin: auto;
+    }
+    .opste-img {
+        position: unset;
+        float: none;
+        margin: 21px auto 0 auto;
+    }
+    .p-img {
+        top: unset;
+        margin: auto;
+        position: unset;
+        width: 234px;
+    }
+    .opste {
+        width: 523px;
+        float: none;
+    }
+    #login {
+        display: none;
+    }
+    .h2_2 {
+        font-family: Source Sans Pro,sans-serif;
+        color: #000;
+        font-weight: unset;
+        margin: auto;
+        top: unset;
+        font-size: 26px;
+        width: 183px;
+        position: unset;
+    }
+    .div_17 {
+        min-width: 539px;
+    }
+    .div_18 {
+        width: 539px;
+    }
+    .div_19 {
+        height: 560px;
+        width: 539px;
+    }
+    .div_20 {
+        width: 318px;
+        padding-right: unset;
+        padding-left: 10px;
+    }
+    .div_23 {
+        float: right;
+        width: 195px;
+        padding-right: 10px;
+        padding-left: unset;
+    }
+    .div_25 {
+        width: 173px !important;
+    }
+    .div_26 {
+        width: 173px !important;
+    }
+    .searc_foot{
+        width: 149px;
+    }
+    .div_27 {
+        margin: auto;
+        width: 507px;
+        padding-top: 270px;
+        float: unset;
+        padding-right: unset;
+        padding-left: unset;
+    }
+    #creater {
+        display: block;
+    }
+    #create {
+        display: none;
+    }
+    .podacii {
+        float: unset;
+        margin: auto;
+        display: table;
+        width: 308px;
+    }
+    .button {
+        margin-top: 10px;
+    }
+    .opste-label {
+        width: unset !important;
+    }
+    .navbar {
+        min-width: 539px;
+    }
+    .navbarr {
+        width: 539px;
+    }
+    .p_12 {
+        display: none;
+    }
+    .podaci2 {
+        display: table;
+        float: unset;
+        margin: auto;
+    }
+    .div_30 {
+    width: 523px;
+        }
+    .div_31 {
+           min-width: 503px;
+    height: unset;
+    }
+    .p_13 {
+       font-size: 19px;
+    float: none;
+    border-right: unset;
+    padding: 10px;
+    border-bottom: 1px solid #0000001f;
+    }
+    .div-bar {
+    	    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-top: 12px;
+    margin: auto;
+    width: 505px !important;
+    display: inline-flex;
+    margin-left: unset !important;
+    padding-right: unset !important;
+    padding-bottom: unset;
+    }
+    .bar {
+        display: block;
+        font-size: 16px;
+        margin-bottom: -2px;
+            white-space: nowrap;
+    }
+    .div_32 {
+           padding-left: 18px;
+    padding-right: 18px;
+    }
+    .content {
+        width: 505px !important;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .email_change {
+        display: none !important;
+    }
+    .fol_user {
+        width: 508px;
+    }
+    .image-upload {
+        top: 30px;
+        margin-left: unset !important;
+    }
+    .fol_usered {
+        width: 446px;
+        margin-top: 16px;
+    }
+    .div_33 {
+        min-width: 411px;
+    }
+    .div_34 {
+        width: 510px;
+    }
+    .msg {
+        width: 497px;
+    }
+    .div_35 {
+        height: unset;
+    }
+    .form_1 {
+        float: unset;
+        margin-right: unset;
+    }
+    .image-upload_2 {
+        margin-left: 65px !important;
+    }
+    .div_39 {
+        width: 419px !important;
+    }
+    .div_37 {
+        margin-bottom: 20px;
+    }
+    .div_43 {
+        margin: 5px auto 0 auto;
+    }
+    .istaknuti_oglasi{
+    	margin-left: 138px;
+    }
+    .sector-2 {
+        margin-top: 481px!important;
+    }
+    .div_44 {
+        float: unset;
+    }
+    .div_46 {
+        float: unset;
+        margin-left: 104px;
+    }
+    .label_5 {
+        margin-left: unset;
+    }
+    .label_6 {
+        margin: unset;
+    }
+    .div_47 {
+        margin-top: 60px;
+    }
+    .p_24 {
+        display: inline-block;
+        margin: 40px 0 20px 30px;
+    }
+    .div_54 {
+        width: 500px;
+        margin: auto;
+        position: unset;
+    }
+    .h2_4 {
+        padding-top: 50px;
+        display: table;
+    }
+    .label_11 {
+        margin-left: unset;
+    }
+    .label_12 {
+        padding-left: unset;
+    }
+    .label_13 {
+        padding-left: unset;
+    }
+    .label_14 {
+        width: 140px;
+    }
+    .select_7 {
+        margin-left: 246px !important;
+    }
+    .div-fa-times-circle {
+        zoom: 0.805;
+    }
+    .div_53 {
+        width: 523px;
+    }
+    .textarea_1 {
+        width: 80%;
+    }
+    .textarea_2 {
+        width: 487px;
+    }
+    .form3 {
+        width: 523px !important;
+    }
+    .btn {
+        margin-left: 356px !important;
+    }
+    .div_49 {
+        float: unset;
+    }
+    .input_7 {
+        width: 150px;
+    }
+    .div_41 {
+        margin-top: -79px;
+        float: right;
+    }
+    .content .post-wrapper {
+        width: 515px;
+        border-right: unset;
+    }
+    .sidebarr {
+        display: none;
+    }
+    .picture {
+        height: 125px;
+        width: 499px;
+        position: absolute;
+        margin-left: -156px;
+          margin-top: 257px;
+        display: unset;
+    }
+    .comed1 {
+        width: 466px;
+    }
+    .h3_2 {
+        width: 505px;
+        text-align: center;
+    }
+    .post_cena {
+        margin-left: 368px;
+        margin-top: 196px;
+    }
+    .div_59 {
+       position: absolute;
+    margin-top: 216px;
+    margin-left: 84px;
+    }
+    .rightet{
+            margin-top: 7px;
+    }
+    .div_77 {
+        width: 523px;
+        padding: 60px 8px;
+    }
+    .div_79 {
+        margin-left: unset;
+        padding-bottom: 35px;
+    }
+    .comed5_1 {
+        position: absolute;
+        margin-left: 30px;
+        margin-top: -132px;
+    }
+    .comed4 {
+        height: 35px;
+    }
+    #spec1 {
+        width: 504px;
+    }
+    .comed5_2 {
+        position: absolute;
+        margin-left: 35px;
+        margin-top: -82px;
+    }
+    .div_76 {
+        width: 520px;
+    }
+    .report_div {
+        margin-left: 442px !important;
+    }
+    .report_div:hover {
+        width: 18px !important;
+    }
+    .div_78 {
+        width: 523px;
+    }
+    .textarea {
+        width: 428px;
+    }
+    .textarea_3 {
+        width: 400px;
+    }
+    .div_73 {
+        margin-left: unset;
+        width: 501px;
+        margin-top: 130px;
+    }
+    .div_74 {
+        width: 492px;
+    }
+    .p_31 {
+        width: 419px;
+        margin-left: 70px;
+        margin-top: -22px;
+    }
+    .div_80 {
+        margin-top: -15px;
+    }
+    .div_71 {
+        top: -38px;
+    }
+    .form_2 {
+        width: 505px;
+    }
+    .div_72 {
+           margin-top: 10px;
+    margin-left: 11px;
+    }
+    .comed5 {
+        margin-left: -83px !important;
+    }
+    .div_60 {
+        margin-top: 400px;
+    }
+    .div_63 {
+        height: 775px;
+    }
+    .infos {
+        border-right: unset;
+        zoom: 1.2;
+        margin-bottom: unset;
+    }
+    .oprema {
+        zoom: 1.2;
+        margin-top: unset;
+    }
+    .div_61 {
+        width: 503px;
+    }
+    .div_62 {
+        width: 503px !important;
+    }
+    #offest {
+        width: 520px;
+    }
+    #map_left {
+        zoom: 1.2995;
+        margin-left: 5px !important;
+        margin-right: unset !important;
+    }
+    .add_post {
+        width: 502px;
+    }
+    .map_leftt {
+        width: 300px;
+        zoom: 1.4;
+    }
+    #map_lefts {
+        zoom: 1.2995;
+        margin-left: 21px;
+    }
+    #leaflet {
+         width: 478px !important;
+    margin: auto;
+    border-radius: 10px;
+    }
+    .company_post {
+        zoom: 0.8492;
+    }
+    .map_left{
+            margin-left: 90px!important;
+    }
+    .company_posts {
+        zoom: 0.8492;
+    }
+    .div_64 {
+        zoom: 0.8492;
+    }
+    .mob_post {
+        width: 503px;
+            padding: 10px 5px;
+    }
+    .div_65 {
+        width: unset;
+    }
+    .div_66 {
+        margin-left: 180px !important;
+    }
+    .div_67 {
+        margin-right: unset;
+        width: 523px;
+        margin-top: 137px;
+    }
+    .div_68 {
+        margin-left: 71px;
+    }
+    .div_69 {
+        width: 523px;
+    }
+    .div_70 {
+        height: unset;
+        min-width: unset;
+        max-width: 523px;
+    }
+    .p_30 {
+        float: unset;
+        border-right: unset;
+        border-bottom: 1px solid #14264e;
+    }
+    .istaknuti_oglas {
+        padding: 15px 14px;
+    }
+    .div_tekst_s {
+        font-size: 15px;
+    }
+}

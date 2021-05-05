@@ -1,0 +1,10 @@
+User-Agent: *
+Disallow: 
+Allow: /https://www.polovnitelefoni.net/
+Allow: /https://www.polovnitelefoni.net/user/
+Allow: /https://www.polovnitelefoni.net/include/
+Allow: /https://www.polovnitelefoni.net/static
+
+Sitemap: https://www.polovnitelefoni.net/cron_job/sitemap.xml
+Sitemap: https://www.polovnitelefoni.net/cron_job/sitemap_posts.php
+Sitemap: https://www.polovnitelefoni.net/cron_job/sitemap_singe_phone.php
