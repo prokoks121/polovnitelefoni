@@ -6,7 +6,7 @@
   <meta name="keywords" content="kupomobil,mobilni,telefon,polovni,prodaja,kupovina,oglasi,nov,specifikacije,mobilni telefoni,polovni mobilni telefoni,polovni telefoni">
 <link rel="stylesheet" href="/static/js/maps/leaflet.css" />
 <script type="text/javascript">
-    
+
 
           $('#mobile_media_css').remove();
 
@@ -22,7 +22,7 @@
 
 <div class="container">
 <div class="novo_1">
-     
+
      <div style="width: 1024px;
     margin: auto;">
     <h1 class="h1_111">
@@ -34,7 +34,7 @@
             <p style="padding-top: 33px;">Iphone 8</p>
             <p style="font-weight: 800;
     padding-top: 6px;">od 799.99 €</p>
-        
+
     </div>
     </div>
          <img src="\static\images\local\img_ind.png" style="height: 405px;
@@ -48,7 +48,7 @@
 
     </div>
 		<div class="content">
-		
+
 			<?php include(ROOT_PATH . '/includes/search.php') ?>
             <!--
 		<p class="wqe1"></p>
@@ -79,11 +79,11 @@
             popup: this._popup
         });
     }
-}); 
+});
     var markerArray = [];
 
    <?php foreach ($radnje as $lok): ?>
- 
+
 markerArray.push(L.marker([<?php echo $lok['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
 <?php endforeach ?>
 
@@ -102,12 +102,11 @@ map.fitBounds(group.getBounds());
         <?php
         $adresa1 = explode("%", $lok['adresa']);
 $radno1 = explode("/%/", $lok['r_dani']);?>
+<a href="/user/company?company_id=<?php echo $lok['id']; ?>">
        <div class="map_left">
-
     <p style="    padding: 5px;
     font-size: 25px;
     font-weight: 600;text-align: center;"><?php echo $lok['ime'];?></p>
- 
     <p style="
     color: #313131;
     padding: 3px;border-bottom: 1px solid #d0d0d0;"><i style="color: #d1414b; font-size: 23px;" class="fas fa-map-marked-alt"></i> <?php echo $adresa1[0] .", ". $adresa1[2];?></p>
@@ -131,28 +130,17 @@ $radno1 = explode("/%/", $lok['r_dani']);?>
     padding: 2px;border-bottom: 1px solid #d0d0d0;">Nedelja: <span style="float: right;"><?php echo $radno1[2];?></span></p>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
   </div>
 
+</a>
 
 
-  
-      
+
       <?php endforeach ?>
 
 
-    
+
 </div>
 		</div>
 
 		<?php include( ROOT_PATH . '/includes/footer.php') ?>
-	
