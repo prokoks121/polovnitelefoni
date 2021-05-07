@@ -2,8 +2,10 @@
  ?>
 
 <?php require_once( ROOT_PATH . '/includes/public_functions.php') ?>
-<?php $posts=getPublishedPosts(); 
- $num_rows=makePaginate(); 
+<?php $posts=getPublishedPosts();
+ $num_rows=makePaginate();
+
+
 
 
 $useragent=$_SERVER['HTTP_USER_AGENT'];

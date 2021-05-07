@@ -1,4 +1,143 @@
 @media only screen and (max-width: 1023px) {
+
+	#menuToggle {
+	    display: flex;
+	    position: relative;
+	    z-index: 1;
+	    -webkit-user-select: none;
+	    user-select: none;
+	    align-content: flex-end;
+	    align-items: flex-end;
+	    flex-direction: column;
+top: 40px;
+	}
+	.userrs,.create{
+		display: none;
+	}
+.navbar{
+	overflow: unset;
+}
+.navbarli{
+	max-height: unset;
+	border-radius: unset;
+	z-index: unset;
+}
+#comms{
+  width: 505px;
+}
+#spec1{
+	margin-top: -11px;
+}
+.div-bar{
+	padding-left: unset;
+}
+.navbar ul{
+	margin-top:-20px;
+}
+.userss1{
+
+}
+
+	#menuToggle input
+	{
+	  display: flex;
+	  width: 40px;
+	  height: 32px;
+	  position: absolute;
+	  cursor: pointer;
+	  opacity: 0;
+	  z-index: 2;
+	}
+
+	#menuToggle .spanToggle
+	{
+	  margin-right: 30px;
+	  display: flex;
+	  width: 29px;
+	  height: 2px;
+	  margin-bottom: 5px;
+	  position: relative;
+	  background: #ffffff;
+	  border-radius: 3px;
+	  z-index: 10;
+	  transform-origin: 5px 0px;
+	  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	              opacity 0.55s ease;
+	}
+
+	#menuToggle .spanToggle:first-child
+	{
+	  transform-origin: 0% 0%;
+	}
+
+	#menuToggle .spanToggle:nth-last-child(2)
+	{
+	  transform-origin: 0% 100%;
+	}
+
+	#menuToggle input:checked ~ .spanToggle
+	{
+	  opacity: 1;
+	  transform: rotate(45deg) translate(-3px, -1px);
+	  background: #36383F;
+	}
+	#menuToggle input:checked ~ .spanToggle:nth-last-child(3)
+	{
+	  opacity: 0;
+	  transform: rotate(0deg) scale(0.2, 0.2);
+	}
+
+	#menuToggle input:checked ~ .spanToggle:nth-last-child(2)
+	{
+	  transform: rotate(-45deg) translate(0, -1px);
+	}
+
+	.navbarli {
+	    position: absolute;
+	    width: 70vw;
+	    height: 100vh;
+	    box-shadow: 0 0 10px #85888c;
+	    margin: -20px 0 0 -100px;
+	    padding: 0px 0px 0px 50px;
+	    background-color: #d1414b;
+	    -webkit-font-smoothing: antialiased;
+	    transform-origin: 0% 0%;
+	    transform: translate(-180%, 0);
+	    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	}
+
+	.navbarli li
+	{
+	  padding: 10px 0;
+	  transition-delay: 2s;
+	}
+
+	#menuToggle input:checked ~ ul
+	{
+	  transform: none;
+	}
+	li,ul{
+	  list-style-type: none;
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	.model_request{
     margin-top: 95px;
 	}
@@ -339,8 +478,11 @@
         margin-top: -82px;
     }
     .div_76 {
-        width: 520px;
+        width: 498px;
     }
+		.navbar ul li a {
+			font-size: 13em;
+		}
     .report_div {
         margin-left: 442px !important;
     }

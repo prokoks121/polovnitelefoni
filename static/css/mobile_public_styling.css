@@ -652,17 +652,12 @@ form input:focus {
     box-shadow: 0 0 6px 6px #b9b9b9cc;
     height: 66px;
     min-width: 539px;
-    overflow: hidden;
     background-color: #14264e;
 }
 .fb-like {
     top: 10px;
 }
-.navbar ul {
-    list-style-type: none;
-    float: right;
-        margin-top: 5px;
-}
+
 .navbar ul li {
     float: left;
     margin-right: 5px;

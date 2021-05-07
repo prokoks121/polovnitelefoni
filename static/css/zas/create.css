@@ -17,6 +17,10 @@
     margin-left: 734px;
     margin-top: 101px;
 }
+
+#menuToggle{
+	display: none;
+}
 .h2_3{font-family:"Source Sans Pro", sans-serif;margin:-40px auto 0 auto;}
 .p_14{width:500px;border-top:1px solid #14264e;margin-left:auto;margin-right:auto;}
 .p_15{width:214px;margin:auto;margin-bottom:-40px;margin-top:20px;font-family:Roboto;}
@@ -334,7 +338,7 @@ select{-moz-appearance:none;-webkit-appearance:none;appearance:none;}
     height: 16px;
     font-family: Roboto;
     margin-top: 7px;
- 
+
     color: #14264e;
     border-radius: 20px;
     margin-right: -40px;

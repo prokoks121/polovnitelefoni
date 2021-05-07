@@ -1,13 +1,13 @@
-<?php 
+<?php
 	@ob_start();
 	session_start();
-	
-	$conn = mysqli_connect("localhost", "polovnit", "4X]BO9j#N0n7ol", "polovnit_kupo");
+
+	$conn = mysqli_connect("localhost", "root", "", "polovnit_kupo");
 
 	if (!$conn) {
 		die("Error connecting to database: " . mysqli_connect_error());
 	}
-	$conns = new PDO('mysql:host=localhost;dbname=polovnit_kupo','polovnit','4X]BO9j#N0n7ol');
+	$conns = new PDO('mysql:host=localhost;dbname=polovnit_kupo','root','');
 	$conns->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $conn->set_charset("utf8");
@@ -25,13 +25,13 @@ if (!isset($_SESSION['user']['id'])) {
         $stm->execute([$reg_user_id]);
 		$user = $stm->fetch(PDO::FETCH_ASSOC);
 
-			$_SESSION['user'] = $user; 
-		
+			$_SESSION['user'] = $user;
+
 		}
 	}
 }
-  
+
 	define ('ROOT_PATH', realpath(dirname(__FILE__)));
-	define('BASE_URL', 'https://www.polovnitelefoni.net/');
+	define('BASE_URL', 'https://localhost/');
 	define('API_KEY', '14c42305f19d4defb0d20e6d0587e6da');
 ?>

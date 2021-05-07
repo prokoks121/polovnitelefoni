@@ -3,7 +3,9 @@
     height: 500px;
     padding-top: 40px;
 }
-
+#menuToggle{
+	display: none;
+}
   .krug_img1 img{
    height: 405px;
     position: absolute;
@@ -181,17 +183,17 @@
 
 /* Track */
 .div_78::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 .div_78::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 .div_78::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 .div_66 {
     margin-top: 44px;
@@ -327,7 +329,7 @@
 }
 .div_63 {
 margin-bottom: 45px;
-    height: 341px;
+    height: 380px;
     background-color: white;
     border-radius: 15px;
 
@@ -1144,7 +1146,7 @@ color: white;
 }
 .div_24 {
     float: left;
-   
+
 }
 .div_25 {
     width: 211px !important;
@@ -1341,7 +1343,7 @@ color: white;
 
 font-family: "Font Awesome 5 Free";
     content: '\f054';
- 
+
     font-weight: 900;
     margin-left: 45px;
 }
@@ -1582,7 +1584,7 @@ width: 220px;
     overflow: hidden;
     position: absolute;
     z-index: 50;
-   
+
     margin-left: 0;
     background: #d1414b;
     width: 211px;
@@ -1602,7 +1604,7 @@ width: 220px;
     float: left;
 }
 .login-input:-webkit-autofill,
-.login-input:-webkit-autofill:hover, 
+.login-input:-webkit-autofill:hover,
 .login-input:-webkit-autofill:focus,.login-input {
 width: 210px;
     padding: 12px 12px 12px 49px;
@@ -1618,7 +1620,7 @@ width: 210px;
 .logout {
    padding: 10px 0px!important;
     width: 211px;
-  
+
     margin-right: 0px!important;
     border-radius: 0px!important;
       border-bottom-left-radius: 20px!important;
@@ -1664,7 +1666,7 @@ width: 210px;
     float: left;
 }
 .navbar ul li a {
-    font-size: 14px;
+    font-size:15px;
     display: block;
     color: #fff;
     text-align: center;
@@ -2813,19 +2815,19 @@ select{
 
 /* Track */
 #custom-select-option-box::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
   border-radius:15px;
 }
- 
+
 /* Handle */
 #custom-select-option-box::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   border-radius:15px;
 }
 
 /* Handle on hover */
 #custom-select-option-box::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 #custom-select-option-boxs::-webkit-scrollbar {
   width: 10px;
@@ -2834,19 +2836,19 @@ select{
 
 /* Track */
 #custom-select-option-boxs::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
   border-radius:15px;
 }
- 
+
 /* Handle */
 #custom-select-option-boxs::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   border-radius:15px;
 }
 
 /* Handle on hover */
 #custom-select-option-boxs::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 #comms{
     background-color: white;

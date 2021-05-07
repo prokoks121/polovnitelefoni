@@ -143,7 +143,7 @@ function editPhonesCompany()
             {
                 if ($cenas != '' and $cenas != '0')
                 {
-                  
+
 
                              $stm = $conns->prepare("SELECT id_telefona FROM modeli WHERE model=(SELECT marka FROM phones WHERE id=?LIMIT 1) LIMIT 1");
        						 $stm->execute([$phone_id ]);
@@ -181,7 +181,7 @@ function AddNewModel()
     $out = $model . "/%/" . $marka;
     if (count($errors) == 0)
     {
-  
+
                $stm = $conns->prepare("INSERT INTO request (`user_id`, `sta`, `created_at`) VALUES (?,?,NOW())");
        						 $stm->execute([$user_id,$out]);
         echo "<meta http-equiv='refresh' content='0'>";
@@ -411,11 +411,11 @@ function UserCompanyChange()
 $reg = $company['regist'];
 $ime = $company['ime'];
 
-      $stm = $conns->prepare("INSERT INTO `backcompany`(`user_id`, `regist`, `ime`, `adresa`, `lokacija`, `adrese`, `r_dani`, `e_cont`, `create_at`, `telefon`) VALUES ('$user_id','$reg','$ime','$adr','$loca','$adr1','$dani','$email',NOW(),'$telefon')");
+      $stm = $conns->prepare("INSERT INTO `backcompany`(`user_id`, `regist`, `ime`, `adresa`, `lokacija`, `adrese`, `r_dani`, `e_cont`, `create_at`, `telefon`) VALUES (?,?,?,?,?,?,?,?,NOW(),?)");
       $stm->execute([$user_id,$reg,$ime,$adresa,$loca,$adrese22,$rad,$email,$telefon]);
 
 
-         
+
 
         echo "<meta http-equiv='refresh' content='0'>";
 
@@ -556,7 +556,7 @@ $ip = getIp();
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -586,7 +586,7 @@ $ip = getIp();
                            </font>
 
                         <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
-                       
+
                         <div style="height: 90px; line-height: 90px; font-size: 88px;">&nbsp;</div>
                       </td>
                     </tr>
@@ -617,7 +617,7 @@ $ip = getIp();
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -627,7 +627,7 @@ $ip = getIp();
 
                                   <div style="height: 4px; line-height: 4px; font-size: 2px;">&nbsp;</div>
                                   <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
-                             
+
                                   <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
                                 </td>
                               </tr>
@@ -712,11 +712,11 @@ function editEmailed()
     {
         $confirm_code = md5(uniqid(rand()));
 
-         $rsrt = $conns->prepare("INSERT INTO recovery (email, user_id, confirmation_code, user, created_at,ip) 
+         $rsrt = $conns->prepare("INSERT INTO recovery (email, user_id, confirmation_code, user, created_at,ip)
                       VALUES(?,?, ?,'0011001200', now(),?)");
     $rsrt->execute([$mail,$user, $confirm_code,$ip]);
 
-          $rsrt = $conns->prepare("INSERT INTO backrecovery (email, user_id, confirmation_code, user, created_at,ip) 
+          $rsrt = $conns->prepare("INSERT INTO backrecovery (email, user_id, confirmation_code, user, created_at,ip)
                       VALUES(?,?, ?,'0011001200', now(),?)");
     $rsrt->execute([$mail,$user, $confirm_code,$ip]);
 
@@ -753,7 +753,7 @@ function editEmailed()
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -827,7 +827,7 @@ function editEmailed()
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -837,7 +837,7 @@ function editEmailed()
 
                                   <div style="height: 4px; line-height: 4px; font-size: 2px;">&nbsp;</div>
                                   <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
-                              
+
                                   <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
                                 </td>
                               </tr>
@@ -897,11 +897,11 @@ function editEmailed()
                 $user_id = $user['id'];
                 $i_user = GetSessionUser();
 
-                    $stm = $conns->prepare("INSERT INTO recovery (email, user_id, confirmation_code, user, created_at,ip) 
+                    $stm = $conns->prepare("INSERT INTO recovery (email, user_id, confirmation_code, user, created_at,ip)
                       VALUES(?,?, ?,?, now(),?)");
         $stm->execute([$mail,$user_id, $confirm_code,$user_code,$ip]);
 
-          $stm = $conns->prepare("INSERT INTO backrecovery (email, user_id, confirmation_code, user, created_at,ip) 
+          $stm = $conns->prepare("INSERT INTO backrecovery (email, user_id, confirmation_code, user, created_at,ip)
                       VALUES(?,?, ?,?, now(),?)");
         $stm->execute([$mail,$user_id, $confirm_code,$user_code,$ip]);
                 echo "<meta http-equiv='refresh' content='0'>";
@@ -934,7 +934,7 @@ function editEmailed()
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -1008,7 +1008,7 @@ function editEmailed()
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -1021,7 +1021,7 @@ function editEmailed()
                                   <!-- <font face="Source Sans Pro, sans-serif" color="#1a1a1a" style="font-size:
                                   17px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px;"><a href="mailto:help@hireclub.com" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">help@hireclub.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">1(800)232-90-26</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">Unsubscribe</a></span>
-                     </font> 
+                     </font>
 
                      <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
 
@@ -1128,7 +1128,7 @@ function getCommentsbyCustomUser()
 
                 header("Refresh:0");
                 exit;
-            
+
         }
 
     }
@@ -1157,12 +1157,12 @@ $ip = getIp();
         $stm->execute([$user_id,$to_user,$text,$ip]);
 
 
- 
+
                 echo "<meta http-equiv='refresh' content='0'>";
 
                 header("Refresh:0");
                 exit;
-            
+
         }
 
     }
@@ -1171,7 +1171,7 @@ function getComments($to_user)
 {
     global $conns;
 
-   
+
 
     $stm = $conns->prepare("SELECT * FROM comments WHERE to_user=? ORDER BY created_at DESC");
     $stm->execute([$to_user]);
@@ -1222,12 +1222,12 @@ function sendCommentsbyCustomUser()
         $stm->execute([$user_id,$to_user,$text,$smile,$ip]);
           $stm = $conns->prepare("INSERT INTO backcomments (`user_id`, `to_user`,`text`,`smile`,`created_at`,`ip`) VALUES(?,?,?,?, now(),?)");
         $stm->execute([$user_id,$to_user,$text,$smile,$ip]);
-        
+
                 echo "<meta http-equiv='refresh' content='0'>";
 
                 header("Refresh:0");
                 exit;
-            
+
         }
     }
 }
@@ -1268,7 +1268,7 @@ function ReSendCode()
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -1342,7 +1342,7 @@ function ReSendCode()
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -1355,7 +1355,7 @@ function ReSendCode()
                                   <!-- <font face="Source Sans Pro, sans-serif" color="#1a1a1a" style="font-size:
                                   17px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px;"><a href="mailto:help@hireclub.com" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">help@hireclub.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">1(800)232-90-26</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">Unsubscribe</a></span>
-                     </font> 
+                     </font>
 
                      <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
 
@@ -1453,7 +1453,7 @@ function editUser($request_values)
         }
         if (count($errors) == 0)
         {
-       
+
 
                 $stm = $conns->prepare("UPDATE users SET ime=?, prezime=?, adresa=?, grad=?, telefon=?, telefon2=? WHERE id=?");
         $stm->execute([$ime, $prezime,$adresa, $grad,$telefon,$telefon2 ,$user_id]);
@@ -1523,7 +1523,7 @@ function editPsw($request_values)
 
             $stm = $conns->prepare("UPDATE users SET password=? WHERE id=?");
         $stm->execute([$pw4,$user_id]);
- 
+
         session_start();
         session_unset($_SESSION['user']);
         session_destroy();
@@ -1768,9 +1768,9 @@ $reg_check = $_POST['reg_check'];
 
         }
         //
-        
 
-        
+
+
     }
     if (strlen($_POST['boja']) > 10)
     {
@@ -2006,7 +2006,7 @@ $reg_check = $_POST['reg_check'];
     if ($reg_check == 1)
     {
 
- 
+
          $stm = $conns->prepare("SELECT id FROM posts WHERE user_id=? AND reg_check='1' AND delete_check='false'");
         $stm->execute([$user_id]);
         $num = $stm->rowCount();
@@ -2037,9 +2037,9 @@ $reg_check = $_POST['reg_check'];
 
     }
     if (isset($_POST['promocode'])) {
-   
+
     $check = $_POST['promocode'];
- 
+
 
      $stm = $conns->prepare("SELECT id FROM promo_code WHERE code=? AND repeats!=0");
         $stm->execute([$check]);
@@ -2079,7 +2079,7 @@ $reg_check = $_POST['reg_check'];
             $stm = $conns->prepare("INSERT INTO backposts (`reklamno`,`kapacitet`,`model_id`,`ip_addres`, `user_id`, `boja`, `body`, `id_telefona`, `starost`, `zamena`, `slanje`, `licno`, `garancija`,`garancija_tip`,`fiksna`, `kutija`, `cena`, `mreza`, `kabl`, `adapter`, `slusalice`, `maska`,`vlasnik`, `img1`, `img2`, `img3`, `img4`, `published`, `created_at`, `updated_at`, `reg_check`, `num_sim`) VALUES(?,?,?, ?, ?, ?,?, ?, ?, ?,?,?, ?,?,?, ?, ?,?, ?,?,?,?,?, ?,?, ?, ?, '1', now(), now(), ?, ?)");
         $stm->execute([$reklamno,$memes,$model_id, $ip, $user_id, $boja, $tekst, $id_modela, $starost, $zamena, $slanje,$licno, $garancija,$garancija_tip,$fix, $kutija, $cena, $mreza, $kabl, $adapter, $slusalice, $maska,$vlasnik, $image1, $image2, $image3, $image4,$reg_check, $num_sim]);
 
-      
+
 
                 $stm = $conns->prepare("SELECT * FROM users WHERE id=?");
     $stm->execute([$user_id]);
@@ -2090,7 +2090,7 @@ $reg_check = $_POST['reg_check'];
     array_push($succes, "Uspešno ste okačili oglas");
             header('location: create_post?succes=Uspešno ste okačili oglas');
             exit(0);
-        
+
     }
 
 }
@@ -2122,13 +2122,13 @@ function recoveryPassword()
                 $user_code = $user['confirmation_code'];
                 $user_id = $user['id'];
 
-                
 
-                          $stm = $conns->prepare("INSERT INTO recovery (email, user_id, confirmation_code, user, created_at,ip) 
+
+                          $stm = $conns->prepare("INSERT INTO recovery (email, user_id, confirmation_code, user, created_at,ip)
                       VALUES(?,?, ?,?, now(),?) ");
         $stm->execute([$mail,$user_id, $confirm_code,$user_code,$ip]);
 
-          $stm = $conns->prepare("INSERT INTO backrecovery (email, user_id, confirmation_code, user, created_at,ip) 
+          $stm = $conns->prepare("INSERT INTO backrecovery (email, user_id, confirmation_code, user, created_at,ip)
                       VALUES(?,?, ?,?, now(),?) ");
         $stm->execute([$mail,$user_id, $confirm_code,$user_code,$ip]);
 
@@ -2159,7 +2159,7 @@ function recoveryPassword()
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -2233,7 +2233,7 @@ function recoveryPassword()
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -2246,7 +2246,7 @@ function recoveryPassword()
                                   <!-- <font face="Source Sans Pro, sans-serif" color="#1a1a1a" style="font-size:
                                   17px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px;"><a href="mailto:help@hireclub.com" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">help@hireclub.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">1(800)232-90-26</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">Unsubscribe</a></span>
-                     </font> 
+                     </font>
 
                      <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
 
@@ -2392,7 +2392,7 @@ function sendMessage()
                 if ($stm->rowCount() == 1)
                 {
                     $message_idd = $message_id['message_id'];
-            
+
                     $stm = $conns->prepare("INSERT INTO messages (`message_id`, `user_id`,`my_id`,`text`, `created_at`, `ip`) VALUES(?, ?, ?, ?, now(),?)");
     $stm->execute([$message_idd, $user_id, $my_user_id, $text, $ip]);
 
@@ -2401,7 +2401,7 @@ function sendMessage()
                 }
                 else
                 {
-              
+
 
                       $stm = $conns->prepare("SELECT message_id FROM messages ORDER BY message_id DESC LIMIT 1");
     $stm->execute([$message_idd, $user_id, $my_user_id, $text]);
@@ -2415,17 +2415,17 @@ function sendMessage()
 
          $stm->execute([$message_idd, $user_id, $my_user_id, $text,$ip]);
 
-                  
+
                 }
             }
-           
+
             // if post created successfully
                 echo "<meta http-equiv='refresh' content='0'>";
 
                 $_SESSION['message'] = "Post created successfully";
                 header("Refresh:0");
                 exit(0);
-            
+
         }
     }
 
@@ -2520,7 +2520,7 @@ function unpublishPost()
     global $conns;
     $user_id = $_SESSION['user']['id'];
     $post_id = $_POST['publish1'];
- 
+
         $stm = $conns->prepare("UPDATE posts SET published='1' WHERE id=? AND user_id=?");
     $stm->execute([$post_id,$user_id]);
     echo "<meta http-equiv='refresh' content='0'>";
@@ -2540,7 +2540,7 @@ function GetSessionUser()
 {
     global $conns;
     $user_id = $_SESSION['user']['id'];
- 
+
 
         $stm = $conns->prepare("SELECT * FROM users WHERE id=?");
     $stm->execute([$user_id]);

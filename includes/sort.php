@@ -18,9 +18,9 @@
 <?php endif ?>
 </div>
 <div class="div_13">
-<p>Broj aktivnih oglasa <i class="fas fa-angle-right"></i> <?php 
+<p>Broj aktivnih oglasa <i class="fas fa-angle-right"></i> <?php
 
-    $stm = $conns->prepare("SELECT * FROM posts WHERE published=true");
+    $stm = $conns->prepare("SELECT * FROM posts WHERE published=true AND delete_check= false");
         $stm->execute();
        $num =$stm->rowCount();
 

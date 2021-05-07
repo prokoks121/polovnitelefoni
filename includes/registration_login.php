@@ -1,14 +1,16 @@
-<?php 
+<?php
 
 require_once(ROOT_PATH  . "/PHPMailer/class.smtp.php");
 require_once(ROOT_PATH  . "/PHPMailer/class.phpmailer.php");
 
   $username = "";
   $email    = "";
-  $errors = array(); 
+  $errors = array();
+  $succes = array();
+
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
-		
+
 
 
 
@@ -26,7 +28,7 @@ require_once(ROOT_PATH  . "/PHPMailer/class.phpmailer.php");
 		$br2 = $_POST['br2'];
 		$confirm_code=md5(uniqid(rand()));
 		$code_id = md5(uniqid(rand()));
-	
+
 		if (empty($username)) {  array_push($errors, "Polje Username je obavezno"); }
 		if (empty($ime)) {  array_push($errors, "Polje Ime je obavezno"); }
 		if (empty($prezime)) {  array_push($errors, "Polje Prezime je obavezno"); }
@@ -45,7 +47,7 @@ $stm->execute([$username,$email]);
 $user = $stm->fetch(PDO::FETCH_ASSOC);
 
 
-		if ($user) { 
+		if ($user) {
 			if ($user['username'] === $username) {
 			  array_push($errors, "Korisnicko ime vec postoji");
 			}
@@ -76,7 +78,7 @@ $stm = $conns->prepare("SELECT id FROM users WHERE username=? OR email=? LIMIT 1
 $stm->execute([$username,$email]);
 $reg_user_id = $stm->fetch();
 
-		
+
 			$_SESSION['user'] = getUserById($reg_user_id);
 $conf_code = 'https://www.polovnitelefoni.net/user/confirmation?user_id='.$username.'&conf='.$confirm_code;
 $subject = 'PolovniTelefoni.net';
@@ -106,7 +108,7 @@ $tekst = '<table cellpadding="0" cellspacing="0" border="0" width="100%" style="
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -180,7 +182,7 @@ $tekst = '<table cellpadding="0" cellspacing="0" border="0" width="100%" style="
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -193,7 +195,7 @@ $tekst = '<table cellpadding="0" cellspacing="0" border="0" width="100%" style="
                                   <!-- <font face="Source Sans Pro, sans-serif" color="#1a1a1a" style="font-size:
                                   17px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px;"><a href="mailto:help@hireclub.com" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">help@hireclub.com</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">1(800)232-90-26</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="#" target="_blank" style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #1a1a1a; font-size: 17px; line-height: 20px; text-decoration: none;">Unsubscribe</a></span>
-                     </font> 
+                     </font>
 
                      <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
 
@@ -249,16 +251,16 @@ $tekst = '<table cellpadding="0" cellspacing="0" border="0" width="100%" style="
 
 $kome = $ime.' '.$prezime;
 smtpmailere($email,  $kome, $subject, $tekst);
-		
+
 			if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
 				$_SESSION['message'] = "You are now logged in";
-			
+
 				header('location: ' . BASE_URL . 'admin/dashboard.php');
 				exit(0);
 			} else {
 				$_SESSION['message'] = "You are now logged in";
-			
-				header('location: /user/user');				
+
+				header('location: /user/user');
 				exit(0);
 			}
 		}
@@ -276,7 +278,7 @@ $key = "6LdLUI4UAAAAAHI9EGn4tAwge_5HEG6Ci6JKzUQK";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
 curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, [
     'secret' => $key,
@@ -297,7 +299,7 @@ if ($resp->success) {
 		if (empty($username)) { array_push($errors, "Unesite Username"); }
 		if (empty($password)) { array_push($errors, "Unesite Password"); }
 		if (empty($errors)) {
-			$password = md5($password); 
+			$password = md5($password);
 
 $stm = $conns->prepare("SELECT * FROM users WHERE username=? and password=? LIMIT 1");
 $stm->execute([$username, $password]);
@@ -317,42 +319,42 @@ $stm->execute([$username, $password]);
 			if ($stm->rowCount() > 0) {
 
 
-   
-			
-				$reg_user_id = $stm->fetch(PDO::FETCH_ASSOC)['id']; 
+
+
+				$reg_user_id = $stm->fetch(PDO::FETCH_ASSOC)['id'];
 
 
 
 
-				
-				$_SESSION['user'] = getUserById($reg_user_id); 
+
+				$_SESSION['user'] = getUserById($reg_user_id);
 
              $stm = $conns->prepare("INSERT INTO login (user_id,created_at,ip) VALUES (?,NOW(),?) ");
 $stm->execute([$reg_user_id, $ip]);
-				 
+
 if(isset($_POST["remember"]))
                     {
                     $hour = time() + 3600 * 24 * 30;
                     setcookie('username', $username, $hour);
                          setcookie('password', $password, $hour);
                     }else {
-			
+
 					setcookie ("username");
 					setcookie ("password");
-				
+
 			}
 
 
 				if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
 					$_SESSION['message'] = "You are now logged in";
-					
+
 					header('location: ' . BASE_URL . '/admin/dashboard.php');
 					exit(0);
 				} else {
 					$_SESSION['message'] = "You are now logged in";
-			
+
 					header("Refresh:0");
-					
+
 					exit(0);
 				}
 			} else {
@@ -362,7 +364,7 @@ if(isset($_POST["remember"]))
 	}
 
 
-	
+
 	function getUserById($id)
 	{
 		global $conns;
@@ -371,14 +373,14 @@ $stm = $conns->prepare("SELECT * FROM users WHERE id=? LIMIT 1");
 $stm->execute([$id]);
 $user = $stm->fetch(PDO::FETCH_ASSOC);
 
-	
-		return $user; 
+
+		return $user;
 	}
 
 
 function smtpmailere($to,  $from_name, $subject, $body)
     {
- 
+
 
 $mail = new PHPMailer(true);
 
