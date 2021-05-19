@@ -1,5 +1,11 @@
 
-<?php require_once( ROOT_PATH . '/mobile_include/head.php') ?>
+<?php require_once( ROOT_PATH . '/mobile_include/head.php');
+
+$stm = $conns->prepare("SELECT * FROM `lokacije`");
+    $stm->execute();
+$loks = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+ ?>
 <link rel=stylesheet href=/static/css/zas-mob/prod-mob.css?v=1.00>
 <meta name="description" content="Želite da kupite novi telefon ili prodate stari? Kupomobil je pravo mesto za Vas. Najpovoljniji novi i polovni telefoni na jednom mestu.">
 <meta name="keywords" content="kupomobil,mobilni,telefon,polovni,prodaja,kupovina,oglasi,nov,specifikacije,mobilni telefoni,polovni mobilni telefoni,polovni telefoni">
@@ -10,7 +16,10 @@
     margin-top: 50px;top: 10px;
         height: 320px;
         z-index: 1;
-      }</style>
+      }
+
+
+    </style>
 
 <title>PolovniTelefoni.net | Najpovoljniji novi i polovni telefoni</title>
 
@@ -19,7 +28,7 @@
 <?php include( ROOT_PATH . '/mobile_include/navbar.php') ?>
 <div class="container">
         <div class="novo_1">
-     
+
      <div style="width: 1024px;
     margin: auto;">
     <h1 class="h1_111">
@@ -31,7 +40,7 @@
             <p style="padding-top: 22px;">Iphone 8</p>
             <p style="font-weight: 600;
     padding-top: 1px;">od 799.99 €</p>
-        
+
     </div>
     </div>
          <img src="\static\images\local\img_ind.png" style="    height: 252px;
@@ -47,7 +56,7 @@
 <div class="content">
 <?php include(ROOT_PATH . '/mobile_include/search.php') ?>
 
-    
+
   <div id="leaflet"></div>
 
 <script src="/static/js/maps/leaflet.js"></script>
@@ -70,12 +79,17 @@
             popup: this._popup
         });
     }
-}); 
+});
     var markerArray = [];
 
    <?php foreach ($radnje as $lok): ?>
- 
+
 markerArray.push(L.marker([<?php echo $lok['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
+<?php endforeach ?>
+
+<?php foreach ($loks as $lok): ?>
+
+markerArray.push(L.marker([<?php echo $lok['geocode']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
 <?php endforeach ?>
 
 var group = L.featureGroup(markerArray).addTo(map);
@@ -92,13 +106,13 @@ map.fitBounds(group.getBounds());
         <?php foreach ($radnje as $lok): ?>
         <?php
         $adresa1 = explode("%", $lok['adresa']);
-$radno1 = explode("/%/", $lok['r_dani']);?>
-       <div class="map_left">
+$radno1 = explode("%", $lok['r_dani']);?>
+<a href="/user/company?company_id=<?php echo $lok['id']; ?>">
 
+       <div class="map_left">
     <p style="    padding: 5px;
     font-size: 25px;
     font-weight: 600;text-align: center;"><?php echo $lok['ime'];?></p>
- 
     <p style="
     color: #313131;
     padding: 3px;border-bottom: 1px solid #d0d0d0;"><i style="color: #d1414b; font-size: 23px;" class="fas fa-map-marked-alt"></i> <?php echo $adresa1[0] .", ". $adresa1[2];?></p>
@@ -122,26 +136,15 @@ $radno1 = explode("/%/", $lok['r_dani']);?>
     padding: 2px;border-bottom: 1px solid #d0d0d0;">Nedelja: <span style="float: right;"><?php echo $radno1[2];?></span></p>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
   </div>
+</a>
 
 
 
-  
-      
       <?php endforeach ?>
 
 
-    
+
 </div>
 		</div>
 

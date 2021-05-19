@@ -199,7 +199,14 @@ div#custom-select-option-boxs{box-shadow:1px 20px 17px -10px #000;position:absol
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;}
 
-.cena_p{-webkit-clip-path:polygon(100% 0, 100% 49%, 100% 100%, 25% 100%, 0 50%, 25% 0);clip-path:polygon(100% 0, 100% 49%, 100% 100%, 25% 100%, 0 50%, 25% 0);background-color:#14264e;padding:5px 10px 5px 25px;float:right;color:#fff;margin:6px;margin-top:-16px;}
+.cena_p{
+	background-color: #535fe3;
+    padding: 5px 15px 5px 15px;
+    float: right;
+    border-radius: 11px;
+    color: #fff;
+    margin: 6px;
+}
 .paginate1{width:1024px;float:left;margin-top:35px;margin-bottom:20px;border-radius:20px;padding:10px 0px;background-color:white;}
 .searc_foot{font-family:"Source Sans Pro", sans-serif;color:#d0d0d0;font-size:17px;width:99px;float:left;padding:10px;}
 .searc_foot a{width:98px;padding:5px;color:#ececec;float:left;}

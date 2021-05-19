@@ -1,13 +1,18 @@
-<?php 
- if (isset($_SESSION['user']['id'])) { 
+<?php
+ if (isset($_SESSION['user']['id'])) {
  require_once( ROOT_PATH . '/includes/public_functions.php') ;
 require_once( ROOT_PATH . '/user/user-fuction.php');
- $user = GetSessionUserPublic(); 
+ $user = GetSessionUserPublic();
 
 include( ROOT_PATH . '/includes/head_section.php'); ?>
 <script src="/static/js/create_post.js"></script>
 
 <style type="text/css">
+@media only screen and (max-width: 1023px){
+.navbar ul li a {
+    font-size: 0.9em;
+}
+}
   .fa-check{
     color:green;
   }
@@ -30,7 +35,7 @@ text-indent: 100%;
     overflow: hidden;
   }
   .leyzi.lazy {
-        
+
         display: block;
           background-image: url('/static/images/icons/loading.gif');
         background-repeat: no-repeat;
@@ -101,7 +106,7 @@ text-indent: 100%;
     font-size: 13px;
     font-family: 'Source Sans Pro',sans-serif;
   }
- 
+
   .podesavanja{
     background-color: white;
     border-radius: 15px;
@@ -133,7 +138,7 @@ if ($num1 > 19) {
  ?>
 
 	<title>PolovniTelefoni.net | Kreiraj oglas</title>
-  
+
 </head>
 <body>
         <?php include( ROOT_PATH . '/includes/navbar.php') ?>
@@ -158,7 +163,7 @@ if ($num1 > 19) {
   </div>
 	<div class="div_36">
     <?php if (!empty($company)): ?>
-      
+
 <div class="div_37"><p class="p_16" >Predstavljate se kao:</p><div id="user_select"><p class="p_17">Korisnik</p><p class="p_17"><?php echo $user['ime'] ." ". $user['prezime']; ?></p></div>
 <div id="company_select"><p class="p_17">Preduzeće</p><p class="p_17"><?php echo $company['ime']; ?></p></div>
 
@@ -188,7 +193,7 @@ if ($num1 > 19) {
 				</div>
 				<div class="sends" >
     <div id="LaDIV"></div>
-   
+
 </div>
 <div id="LaDIV1" class="div_41" ></div>
 
@@ -198,7 +203,7 @@ if ($num1 > 19) {
   <div class="div_42">
         <h2 class="h2_3">Opšte informacije</h2>
         <div class="div_43">
-  
+
 <p class="p_19" ></p></div>
 
 
@@ -212,10 +217,10 @@ if ($num1 > 19) {
 </label>
 <div>
  <select  class="send select_3" name="godina" >
-         <?php 
+         <?php
 $godina = date('Y');
 $godina1 = $godina - 20;
-         for ($i=$godina; $i >= $godina1 ; $i--) { 
+         for ($i=$godina; $i >= $godina1 ; $i--) {
            echo "<option value='". $i ."'>".$i ."</option>";
          } ?>
       </select>
@@ -234,14 +239,14 @@ $godina1 = $godina - 20;
           <option value="Decembar" >Decembar</option>
 
       </select>
-      
+
 </div>
 </div>
 <label   class="lael label_4">Kao nov
     <input id="checkbox2"  class="intcheck" type="checkbox" name="checkbox2" value="1">
       <span id="1dan" class="checkmark"></span>
 </label>
-   
+
    <label   class="lael label_4">Nov
     <input id="checkbox3"  class="intcheck" type="checkbox" name="checkbox3" value="1" disabled="disabled">
       <span id="1dan" class="checkmark"></span>
@@ -250,7 +255,7 @@ $godina1 = $godina - 20;
    </div>
    <div class="div_46">
     <p class="p_22">3. Unesite cenu uređaja </p>
-  
+
        <label class="lael label_5">Dogovor
        <input id="checkbox4" class="intcheck" type="checkbox" name="checkbox4" value="Licno preuzimanje">
          <span class="checkmark"></span>
@@ -264,16 +269,16 @@ $godina1 = $godina - 20;
          <label class="laell label_6"  >
        <input maxlength="4" id="cenaa" class="input_4" type="number" name="cenaa" placeholder="cena telefona" >
        <span  class="span_3 fas fa-euro-sign"></span>
-       
+
        </label>
        </div>
-    
-    
+
+
 </div>
 <div class="div_47">
   <div class="div_48">
  <p class="p_23">4. Unesi trajanje garancije </p>
-    
+
        <label class="lael label_7">Garancija
        <input id="checkbox6" class="intcheck" type="checkbox" name="checkbox6" value="Garancija3" >
          <span class="checkmark"></span>
@@ -294,11 +299,11 @@ $godina1 = $godina - 20;
          <span class="checkmark"></span>
 
        </label>
-      
+
   </div>
    <label class="laell label_9" >
        <input maxlength="10"  id="trajanje" class="inttxt input_5" type="text" name="trajanje" placeholder="npr: '1 Godinu'">
-       
+
        </label>
        <div class="div_49" class="sends">
          <p class="p_24">5. Izaberite mrežu uređaja</p>
@@ -315,12 +320,12 @@ $godina1 = $godina - 20;
 </div>
   <h2 class="h2_4">Napredne informacije</h2>
         <div class="div_54" >
-  
+
 <p class="p_25"></p></div>
 
     <div class="div_50">
       <div class="div_51">
-    	
+
     <label class="lael label_11" >Zamena
      <input class="intcheck" type="checkbox" name="zamena" value="Zamena">
        <span class="checkmark"></span>
@@ -356,19 +361,19 @@ $godina1 = $godina - 20;
            <option>128</option>
            <option>512</option>
          </select>
-   
+
            </label>
  <select class="sendss select_7" name='cap_nm'>
       <option>GB</option>
       <option>TB</option>
     </select>
 
-     	 
+
 </div>
 
 
-   		 
-    
+
+
     	<label class="lael label_14"><p class="p_28" >Prateća oprema:</p>
          <label class="lael" >Kutija
 		<input  class="intcheck" type="checkbox" name="kutija" value="Kutija">
@@ -395,7 +400,7 @@ $godina1 = $godina - 20;
 		  <span class="checkmark"></span>
 
 		</label>
-  
+
 
     </label>
 <div><select class="select_6" name="num_sim">
@@ -403,7 +408,7 @@ $godina1 = $godina - 20;
     <option value="Dual SIM">Dual SIM</option>
 
 </select></div>
-    
+
   </div>
 
 
@@ -421,11 +426,11 @@ $godina1 = $godina - 20;
         <div class="div-icon1 div_57" > <img class="div-icon1-img" id="preview-img1"  src="/static/images/upload.png" /></div>
 </label>
   <input id="file--input" class="img1 input_7" type="file" name="img[]"/>
-   
+
    </div>
-     
-        
-   
+
+
+
       <div class="div-fa-times-circle" >
         <div class="div-icon div_56"   id="icon-img2" >
             <i  id="imageClear2" class="far fa-times-circle i_6" ></i>
@@ -434,10 +439,10 @@ $godina1 = $godina - 20;
         <div class="div-icon1" > <img class="div-icon1-img"  id="preview-img2"  src="/static/images/upload.png" /></div>
 </label>
   <input  id="file--input1" class="img2 input_7" type="file" name="img[]"/>
-   
+
    </div>
 
-        
+
     <input type="text" name="crtsubmit" class="div_56"  value="true">
     <div class="div-fa-times-circle">
       <div class="div-icon div_56"   id="icon-img3">
@@ -447,10 +452,10 @@ $godina1 = $godina - 20;
         <div class="div-icon1" > <img class="div-icon1-img" id="preview-img3"  src="/static/images/upload.png" /></div>
 </label>
   <input  id="file--input2" class="img3 input_7" type="file" name="img[]"/>
-   
+
    </div>
-       
-    
+
+
      <div class="div-fa-times-circle" >
       <div class="div-icon div_56"  id="icon-img4">
           <i  id="imageClear4" class="far fa-times-circle i_6" ></i>
@@ -459,14 +464,14 @@ $godina1 = $godina - 20;
         <div class="div-icon1" > <img class="div-icon1-img" id="preview-img4"  src="/static/images/upload.png" /></div>
 </label>
   <input  id="file--input3" class="img4 input_7" type="file" name="img[]"/>
-   
-   </div>    
-        
+
+   </div>
+
 </div>
 
 
 <input type="text" name="reg_check" id="reg_check" class="input_8" value="1">
-   
+
 <div id="image_preview"></div>
 
     	<div class="div_58" >
@@ -481,7 +486,7 @@ $godina1 = $godina - 20;
 
 <div style="display: table;
     margin: auto;">
-  <div class="istaknuti_oglasi"><h4>Besplatan oglas</h4> 
+  <div class="istaknuti_oglasi"><h4>Besplatan oglas</h4>
 
 <div class="post " style="zoom:83%">
 <div class="img_12">
@@ -519,7 +524,7 @@ $godina1 = $godina - 20;
 </div>
 
   </div>
-  <div class="istaknuti_oglas"><h4>Istaknuti oglas</h4> 
+  <div class="istaknuti_oglas"><h4>Istaknuti oglas</h4>
 
 
 
@@ -623,7 +628,7 @@ if($("#checkbox3").prop("checked") == true){
                                $('#checkbox3').not(this).prop('checked', false);
 
                 $('#checkbox2').not(this).prop('checked', true);
-                                $('#checkbox1').not(this).prop('checked', false);  
+                                $('#checkbox1').not(this).prop('checked', false);
                                   $(this).attr("disabled", true);
            $("#checkbox2").attr("disabled", true);
            $("#checkbox1").attr("disabled", false);
@@ -716,19 +721,22 @@ $.ajax({ url: '/user/check_promo',
  success: function(output) {
               datas = output;
               data = datas[0];
-              if (typeof datas[1] !== "undefined") {
-                alert(datas[1]);
-                 check = 1;
-              }else{
-               if (data) {
-              
-    check = data;
-    $('.input_promo').css({'border-color':'red'});
-   }}
 
+               if (!data) {
+    $('.input_promo').css({'border-color':'red'});
+    check = 1;
+   }else{
+     checkSubmit();
+   }
+   if (typeof datas[1] !== "undefined") {
+     alert(datas[1]);
+   }
           }
  });
+}else{
+  checkSubmit();
 }
+function checkSubmit() {
 if (check == 0) {
 
  $("#checkbox8").attr("disabled", false);
@@ -737,11 +745,12 @@ if (check == 0) {
             $("#checkbox1").attr("disabled", false);
            $("#checkbox2").attr("disabled", false);
            $("#checkbox3").attr("disabled", false);
-if (check == 0) {
+
            $('#mainform').submit();
-         }
 
 
+
+}
 }
 });
 

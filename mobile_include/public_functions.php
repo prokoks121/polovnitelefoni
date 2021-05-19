@@ -161,7 +161,7 @@ function SendReport()
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -191,7 +191,7 @@ function SendReport()
                            </font>
 
                         <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
-                       
+
                         <div style="height: 90px; line-height: 90px; font-size: 88px;">&nbsp;</div>
                       </td>
                     </tr>
@@ -222,7 +222,7 @@ function SendReport()
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -232,7 +232,7 @@ function SendReport()
 
                                   <div style="height: 4px; line-height: 4px; font-size: 2px;">&nbsp;</div>
                                   <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
-                             
+
                                   <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
                                 </td>
                               </tr>
@@ -333,7 +333,7 @@ function SendKontakt()
                       <td align="center" valign="top">
                         <div style="height: 40px; line-height: 40px; font-size: 38px;">&nbsp;</div>
                         <a href="https://www.polovnitelefoni.net"
-                        style="   
+                        style="
     display: block;
   ">
                           <img src="https://www.polovnitelefoni.net/static/images/email_logo.png" alt="PolovniTelefoni.net" width="345px" border="0" style="display: block;
@@ -363,7 +363,7 @@ function SendKontakt()
                            </font>
 
                         <div style="height: 30px; line-height: 30px; font-size: 28px;">&nbsp;</div>
-                       
+
                         <div style="height: 90px; line-height: 90px; font-size: 88px;">&nbsp;</div>
                       </td>
                     </tr>
@@ -394,7 +394,7 @@ function SendKontakt()
                             <tbody>
                               <tr>
                                 <td align="center" valign="top">
-                                
+
                                   <div style="height: 34px; line-height: 34px; font-size: 32px;">&nbsp;</div> <font face="Source Sans Pro, sans-serif" color="#868686" style="font-size: 15px; line-height: 20px;">
                         <span style="font-family: Source Sans Pro, Arial, Tahoma, Geneva, sans-serif; color: #868686; font-size: 15px; line-height: 20px;">
                            PolovniTelefoni.net
@@ -404,7 +404,7 @@ function SendKontakt()
 
                                   <div style="height: 4px; line-height: 4px; font-size: 2px;">&nbsp;</div>
                                   <div style="height: 3px; line-height: 3px; font-size: 1px;">&nbsp;</div>
-                             
+
                                   <div style="height: 35px; line-height: 35px; font-size: 33px;">&nbsp;</div>
                                 </td>
                               </tr>
@@ -452,7 +452,7 @@ function getSingleUser()
             $users = $stm->fetch(PDO::FETCH_ASSOC);
 
             return $users;
-        
+
     }
 
 }

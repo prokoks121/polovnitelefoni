@@ -21,8 +21,8 @@ if ($cmp == '') {
    #map {
         height: 200px;
       }
-    
-   
+
+
       #floating-panel {
         position: absolute;
         top: 10px;
@@ -40,7 +40,7 @@ if ($cmp == '') {
         float: right;
             margin: 20px;
                 margin-left: 0px;
-        
+
       }
    .MicrosoftMap .NavBar_Container.Light .NavBar_MapTypeButtonContainer.withBackground{
     display: none;
@@ -51,7 +51,7 @@ if ($cmp == '') {
       .bm_LocateMeControl{
          display: none!important;
       }
-     
+
       .bm_bottomLeftOverlay{
         display: none!important;
       }
@@ -73,7 +73,7 @@ if ($cmp == '') {
         transition-duration: 0.2s;
 
       }
-    
+
       .company_location_hidden{
          display: none;
             position: absolute;
@@ -141,8 +141,8 @@ if ($cmp == '') {
     text-align: center;
     border-bottom: 1px solid #35353585;
     margin-bottom: 8px;"><?php echo $cmp['ime'];?></p>
-  
-    <form method="post" > 
+
+    <form method="post" >
     <p style="font-size: 17px;
     color: #313131;
     padding: 3px;"><i style="color: #d1414b; font-size: 23px;" class="fas fa-map-marked-alt"></i>
@@ -210,7 +210,6 @@ if ($cmp == '') {
 
 
   </div>
-        
 
 
 
@@ -223,7 +222,8 @@ if ($cmp == '') {
 
 
 
- 
+
+
         <div id="leaflet"></div>
 
 <script src="/static/js/maps/leaflet.js"></script>
@@ -246,13 +246,13 @@ if ($cmp == '') {
             popup: this._popup
         });
     }
-}); 
+});
     var markerArray = [];
 
 markerArray.push(L.marker([<?php echo $cmp['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $cmp['ime']; ?>"));
    <?php foreach ($loks as $lok): ?>
- 
-markerArray.push(L.marker([<?php echo $lok['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
+
+markerArray.push(L.marker([<?php echo $lok['geocode']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
 <?php endforeach ?>
 
 var group = L.featureGroup(markerArray).addTo(map);
@@ -317,10 +317,10 @@ $('#leaflet').css({"width": width,"height": height});
         <?php
         $adresa1 = explode("%", $lok['adresa']);
 $radno1 = explode("%", $lok['vreme']); ?>
-  
+
        <div class="map_leftt">
     <div class="company_location_hidden">
-    
+
 <form method="post">
   <div id="company_location_hidden_div1" class="<?php echo $lok['id'] ?>" style="    height: 244px;">
 <button  name="company_location_delete" value="<?php echo $lok['id'];?>" style="      color: white;
@@ -333,7 +333,7 @@ $radno1 = explode("%", $lok['vreme']); ?>
     border: none;
     font-weight: bold;
     cursor: pointer;" onclick="return confirm('Da li sigurni da želite da obrišete vašu lokaciju?\n*Ok--Da, želim da izbrišem lokaciju\n*Cancle--Ne želim da izbrišem lokaciju')">Obriši oglas</button>
-   
+
     </div>
 
 </form>
@@ -342,7 +342,7 @@ $radno1 = explode("%", $lok['vreme']); ?>
     <p style="    padding: 5px;
     font-size: 25px;
     font-weight: 600;margin-left: 10px;"><?php echo $lok['ime'];?></p>
- 
+
     <p style="
     color: #313131;
     padding: 3px;border-bottom: 1px solid #d0d0d0;"><i style="color: #d1414b; font-size: 23px;" class="fas fa-map-marked-alt"></i> <?php echo $adresa1[0] .", ". $adresa1[2];?></p>
@@ -399,8 +399,8 @@ $radno1 = explode("%", $lok['vreme']); ?>
  </a>
   </div>
 <?php foreach ($posts as $post): ?>
-  
-  <?php 
+
+  <?php
 global $conns;
   $phone_id = $post['phone_id'];
 
@@ -411,7 +411,7 @@ global $conns;
 
   ?>
   <div class="company_post" >
- 
+
     <img style="    width: 160px;
     height: 212px;" src="/static/images/modeli/<?php echo $phone['photo'] ?>">
     <p><?php echo $phone['marka'] ?></p>
@@ -419,7 +419,7 @@ global $conns;
     height: 20px;
     overflow: hidden;
     display: block;"><?php echo $phone['model']; ?></p>
-    <p style="float: left;    margin-top: 8px;"><?php echo date("d.m.y", strtotime($post["created_at"])); ?></p> 
+    <p style="float: left;    margin-top: 8px;"><?php echo date("d.m.y", strtotime($post["created_at"])); ?></p>
 
     <p   style="    -webkit-clip-path: polygon(100% 0%, 100% 49%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
     clip-path: polygon(100% 0%, 100% 49%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
@@ -450,14 +450,14 @@ global $conns;
                             $('#phones_div').html(whatigot);
 
 
-                        } 
-                    }); 
+                        }
+                    });
 
 
 
-                }); 
+                });
 
-        
+
 
 
 $('#mob').css({ "background-color": "white","color": "black"});
@@ -532,11 +532,11 @@ $num = $stm->rowCount();
    $stm = $conns->prepare("SELECT * FROM modeli");
     $stm->execute();
     $tel = $stm->fetchAll(PDO::FETCH_ASSOC);
-   
+
 
        ?>
    </script>
-<div id="add_company_location_div" style="  
+<div id="add_company_location_div" style="
     background: rgba(0, 0, 0, 0.87);
     width: 100%;
     height: 100%;
@@ -625,7 +625,7 @@ $num = $stm->rowCount();
 
 
 
-<div id="add_company_post_div" style="  
+<div id="add_company_post_div" style="
     background: rgba(0, 0, 0, 0.87);
     width: 100%;
     height: 100%;
@@ -649,7 +649,7 @@ $num = $stm->rowCount();
     text-align: center;
     padding: 29px;">Kreiraj oglas</h3>
     <select class="come1" name="model" style="padding: 5px 105px 5px 5px;
- 
+
     margin-left: 23px;
     margin-bottom: 10px;">
       <option value="0" disabled="disabled" selected>Izaberi marku</option>
@@ -659,7 +659,7 @@ $num = $stm->rowCount();
     </select>
 <div id="phones_div"></div>
 
-    
+
 
     <input id="cena_add" type="txt" value="" name="cena" placeholder="Cena" style="    padding: 5px 35px 5px 5px;
     margin-left: 23px;">
@@ -674,11 +674,10 @@ $num = $stm->rowCount();
     $('.come1').on('change',function(){
    $('.a1').css({"display" : "none"});
    $('.comse1 option:first').prop('selected',true);
-   
+
    var num = '.a1.a0' + $('.come1 option:selected').val();
    $(num).css({"display" : "block"});
    });
      });
 </script>
 		<?php include( ROOT_PATH . '/includes/footer.php') ?>
-   

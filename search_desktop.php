@@ -12,7 +12,7 @@
 .info{color:#000;width:100%;height:50px;display:inline-table;}
 .cena_p{-webkit-clip-path:polygon(100% 0, 100% 49%, 100% 100%, 25% 100%, 0 50%, 25% 0);clip-path:polygon(100% 0, 100% 49%, 100% 100%, 25% 100%, 0 50%, 25% 0);background-color:#14264e;padding:5px 10px 5px 25px;float:right;color:#fff;margin:6px;margin-top:-16px;} </style>"; } }?>
 <script type="text/javascript">
-	   
+
 	      $('#mobile_media_css').remove();
 
 
@@ -27,9 +27,9 @@
 		<?php include( ROOT_PATH . '/includes/navbar.php') ?>
 			   <?php include(ROOT_PATH . '/includes/errors.php') ?>
 <div class="container">
-    
+
 	<div class="novo_1">
-     
+
      <div style="width: 1024px;
     margin: auto;">
     <h1 class="h1_111">
@@ -41,7 +41,7 @@
             <p style="padding-top: 33px;">Iphone 8</p>
             <p style="font-weight: 800;
     padding-top: 6px;">od 799.99 €</p>
-        
+
     </div>
     </div>
          <img src="\static\images\local\img_ind.png" style="height: 405px;
@@ -60,7 +60,22 @@
 <div class="content">
 			   <?php include(ROOT_PATH . '/includes/sort.php') ?>
     <div class="post1" style="    margin-top: 10px;">
+<?php
+if ($postss == 0) {
+ ?>
 
+ <p style="margin: 30px auto;
+    width: 329px;
+    font-size: 30px;
+    font-family: arial;">Nema ponude za traženi filter.</p>
+
+ <img src="/static/images/icons/sad.png" alt="sad" style="margin: auto;
+    display: block;">
+
+ <?php
+}
+
+ ?>
     	<?php if (!empty($_GET['roew'])) {
     		if ($_GET['roew'] == "three") {
     			include(ROOT_PATH . '/includes/post_three.php');
@@ -73,5 +88,5 @@
 		</div>
 		</div>
 
-		
+
 		<?php include( ROOT_PATH . '/includes/footer.php') ?>

@@ -20,7 +20,7 @@
 	.cena_p_comp{
 		background-color: rgb(15, 109, 208);
 	}
-		
+
 </style>
 <title>Najpovoljniji novi i polovni telefoni | PolovniTelefoni.net</title>
 
@@ -29,7 +29,7 @@
 <?php include( ROOT_PATH . '/mobile_include/navbar.php') ?>
 <div class="container">
 		<div class="novo_1">
-     
+
      <div style="width: 1024px;
     margin: auto;">
     <h1 class="h1_111">
@@ -41,7 +41,7 @@
             <p style="padding-top: 22px;">Iphone 8</p>
             <p style="font-weight: 600;
     padding-top: 1px;">od 799.99 €</p>
-        
+
     </div>
     </div>
          <img src="\static\images\local\img_ind.png" style="    height: 252px;
@@ -60,6 +60,22 @@
 
 <?php include(ROOT_PATH . '/mobile_include/sort.php') ?>
 <div class="post1" style="margin-top:10px">
+	<?php
+	if ($postss == 0) {
+	 ?>
+
+	 <p style="margin: 30px auto;
+	    width: 329px;
+	    font-size: 30px;
+	    font-family: arial;">Nema ponude za traženi filter.</p>
+
+	 <img src="/static/images/icons/sad.png" alt="sad" style="margin: auto;
+	    display: block;">
+
+	 <?php
+	}
+
+	 ?>
 <?php include(ROOT_PATH . '/mobile_include/post_three.php') ?></div>
 <div class="paginate1"><?php include( ROOT_PATH . '/includes/paginate_search.php') ?></div></div>
 </div>

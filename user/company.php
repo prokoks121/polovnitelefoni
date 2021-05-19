@@ -30,8 +30,8 @@ $posts = getCompanyPost();
    #map {
         height: 200px;
       }
-    
-   
+
+
       #floating-panel {
         position: absolute;
         top: 10px;
@@ -49,7 +49,7 @@ $posts = getCompanyPost();
         float: right;
             margin: 20px;
                 margin-left: 0px;
-        
+
       }
    .MicrosoftMap .NavBar_Container.Light .NavBar_MapTypeButtonContainer.withBackground{
     display: none;
@@ -60,7 +60,7 @@ $posts = getCompanyPost();
       .bm_LocateMeControl{
          display: none!important;
       }
-     
+
       .bm_bottomLeftOverlay{
         display: none!important;
       }
@@ -73,7 +73,7 @@ $posts = getCompanyPost();
 #leaflet{width: 675px;
     top: 10px;
     height: 320px;
-    z-index: 1;
+    z-index: 0;
       }
       .list_mem{
         position: absolute;
@@ -124,6 +124,11 @@ $posts = getCompanyPost();
     margin-top: 4px;
     font-size: 15px;
     }
+
+    @media only screen and (max-width: 1023px){
+.navbar ul li a {
+    font-size: 17px;
+}}
 </style>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -158,10 +163,10 @@ $('.company_posts').on('touchstart touchend', '.link', function (e) {
     text-align: center;
     border-bottom: 1px solid #35353585;
     margin-bottom: 8px;"><?php echo $cmp['ime'];?></p>
-  
+
     <p style="font-size: 17px;
     color: #313131;
-   
+
     padding: 3px; padding-right: 17px;"><i style="    color: #d1414b;
     font-size: 23px;
     margin-right: 10px;" class="fas fa-map-marked-alt"></i>
@@ -173,7 +178,7 @@ $('.company_posts').on('touchstart touchend', '.link', function (e) {
     padding-right: 17px;"><?php echo $adresa[2];?>, <?php echo $adresa[3];?></p>
 
     <p style="font-size: 17px;
-    
+
     color: #313131;
     padding: 3px;
     border-bottom: 1px solid #d0d0d0;
@@ -182,7 +187,7 @@ $('.company_posts').on('touchstart touchend', '.link', function (e) {
     margin-right: 19px;" class="far fa-envelope"></i><?php echo $cmp['e_cont'];?></p>
        <p style="font-size: 17px;
     color: #313131;
-   
+
     padding: 3px;
      padding-right: 17px;
     border-bottom: 1px solid #d0d0d0;"><i style="    color: #d1414b;
@@ -210,8 +215,8 @@ $('.company_posts').on('touchstart touchend', '.link', function (e) {
 
 
   </div>
-        
-      
+
+
 
 
 
@@ -219,7 +224,7 @@ $('.company_posts').on('touchstart touchend', '.link', function (e) {
   $(document).ready(function(){
 var countt1 = <?php
 $loc = array($cmp['lokacija']);
-for ($i=0; $i < count($loks); $i++) { 
+for ($i=0; $i < count($loks); $i++) {
   $loc[] = $loks[$i]['geocode'];
 }
 
@@ -260,13 +265,13 @@ $('.add_post').remove();
             popup: this._popup
         });
     }
-}); 
+});
     var markerArray = [];
 
 markerArray.push(L.marker([<?php echo $cmp['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $cmp['ime']; ?>"));
    <?php foreach ($loks as $lok): ?>
- 
-markerArray.push(L.marker([<?php echo $lok['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
+
+markerArray.push(L.marker([<?php echo $lok['geocode']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
 <?php endforeach ?>
 
 var group = L.featureGroup(markerArray).addTo(map);
@@ -321,7 +326,7 @@ $radno1 = explode("%", $lok['vreme']); ?>
     <p style="    padding: 5px;
     font-size: 25px;
     font-weight: 600;margin-left: 10px;"><?php echo $lok['ime'];?></p>
- 
+
     <p style="
     color: #313131;
     padding: 3px;border-bottom: 1px solid #d0d0d0;"><i style="color: #d1414b; font-size: 23px;" class="fas fa-map-marked-alt"></i> <?php echo $adresa1[0] .", ". $adresa1[2];?></p>
@@ -364,21 +369,21 @@ $radno1 = explode("%", $lok['vreme']); ?>
 
     </div>
     <div class="mob_post">
-       
+
 <?php foreach ($posts as $post): ?>
-  
-  <?php 
+
+  <?php
 global $conns;
   $phone_id = $post['phone_id'];
   $id=$post['company_id'];
- 
+
 
    $stm = $conns->prepare("SELECT id,marka,model,photo FROM phones WHERE id=? LIMIT 1");
             $stm->execute([$phone_id]);
             $phone = $stm->fetch(PDO::FETCH_ASSOC);
 
 
- 
+
 
 
    $stm = $conns->prepare("SELECT * FROM company_phone WHERE company_id=? AND phone_id=?");
@@ -418,7 +423,7 @@ $cena = $phoce_list['0']['cena']. '€';
     <div style="    display: flow-root;
     height: 33px;
     width: 181px;"><p style="float: left;padding: 7.5px;"><i style="margin-right: 4px;" class="far fa-hdd"></i><?php echo $list['memorija'] ?> GB</p><p style="margin-right: 7px;" class="list_mem_p"><?php echo $list['cena']?>€</p></div>
-        
+
       <?php endforeach ?>
     </div>
   </div>
@@ -458,5 +463,5 @@ $(".add_post").show(200);
    </script>
 
 		<?php include( ROOT_PATH . '/includes/footer.php') ?>
-   
+
 <!-- https://dev.virtualearth.net/REST/v1/Locations?q=Goce%20Delceva%2011%20Kaludjerica&key=AgHRct6VCWsXPU2p7Y7mI8wsjY5zmWObaXLmBEeN20Tow_w0Q8VmeQSV3TvK_81y&o=json -->

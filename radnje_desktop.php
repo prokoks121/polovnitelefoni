@@ -1,5 +1,16 @@
 
-<?php require_once( ROOT_PATH . '/includes/header.php') ?>
+<?php require_once( ROOT_PATH . '/includes/header.php');
+
+
+$stm = $conns->prepare("SELECT * FROM `lokacije`");
+    $stm->execute();
+$loks = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+
+ ?>
+
+
+
 <link rel=stylesheet href=/static/css/zas/radnje-dek.css?v=1.00>
 
   <meta name="description" content="Želite da kupite novi telefon ili prodate stari? Kupomobil je pravo mesto za Vas. Najpovoljniji novi i polovni telefoni na jednom mestu.">
@@ -87,6 +98,11 @@
 markerArray.push(L.marker([<?php echo $lok['lokacija']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
 <?php endforeach ?>
 
+<?php foreach ($loks as $lok): ?>
+
+markerArray.push(L.marker([<?php echo $lok['geocode']; ?>]).addTo(map).bindPopup("<?php echo $lok['ime']; ?>"));
+<?php endforeach ?>
+
 var group = L.featureGroup(markerArray).addTo(map);
 map.fitBounds(group.getBounds());
 
@@ -101,7 +117,7 @@ map.fitBounds(group.getBounds());
         <?php foreach ($radnje as $lok): ?>
         <?php
         $adresa1 = explode("%", $lok['adresa']);
-$radno1 = explode("/%/", $lok['r_dani']);?>
+$radno1 = explode("%", $lok['r_dani']);?>
 <a href="/user/company?company_id=<?php echo $lok['id']; ?>">
        <div class="map_left">
     <p style="    padding: 5px;

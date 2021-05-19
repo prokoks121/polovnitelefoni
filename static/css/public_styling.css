@@ -1583,7 +1583,7 @@ width: 220px;
     transition: max-height 0.2s ease-out;
     overflow: hidden;
     position: absolute;
-    z-index: 50;
+    z-index: 150;
 
     margin-left: 0;
     background: #d1414b;
